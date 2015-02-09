@@ -58,10 +58,53 @@ function saveEvent(request, response){
   var contextData = {errors: []};
 
   if (validator.isLength(request.body.title, 5, 50) === false) {
-    contextData.errors.push('Your title should be between 5 and 100 letters.');
+    contextData.errors.push('Your title should be between 5 and 50 letters.');
+  }
+  
+  if (validator.isLength(request.body.location, 5, 50) === false) {
+    contextData.errors.push('Location should be between 5 and 50 letters.');
   }
 
-
+  if (validator.isURL(request.body.image) === false || (request.body.image.indexOf('.png') === -1 && request.body.image.indexOf('.gif') === -1)) {
+    contextData.errors.push('The image URL must end with ‘.gif’ or ‘.png’');
+  }
+  if (validator.isInt(request.body.hour) === false) {
+   contextData.errors.push('Hour must be integer.');
+  }
+  var hour = parseInt(request.body.hour, 10);
+  if (hour > 23 || hour < 0) {
+   contextData.errors.push('Hour must be from 0 to 23.');
+  }
+  if (validator.isInt(request.body.minute) === false) {
+   contextData.errors.push('Minute must be integer.');
+  }
+  var minute = parseInt(request.body.minute, 10);
+  if (minute !== 0 && minute !== 30) {
+   contextData.errors.push('Minute must be from 0 or 30.');
+  }
+  if (validator.isInt(request.body.day) === false) {
+   contextData.errors.push('Day must be integer.');
+  }
+  var day = parseInt(request.body.day, 10);
+  if (day > 31 || day < 1) {
+   contextData.errors.push('Day must be from 1 to 31.');
+  }
+  if (validator.isInt(request.body.month) === false) {
+   contextData.errors.push('Month must be integer.');
+  }
+  var month = parseInt(request.body.month, 10);
+  if (month > 11 || month < 0) {
+   contextData.errors.push('Month must be from 0 (January) to 11 (December).');
+  }
+  if (validator.isInt(request.body.year) === false) {
+   contextData.errors.push('Year must be integer.');
+  }
+  var year = parseInt(request.body.year, 10);
+  if (year > 2016 || year < 2015) {
+   contextData.errors.push('Year must be either 2015 or 2016.');
+  }
+  //end of new event validations
+  
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
