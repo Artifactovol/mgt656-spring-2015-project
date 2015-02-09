@@ -66,7 +66,7 @@ function saveEvent(request, response){
   }
 
   if (validator.isURL(request.body.image) === false || (request.body.image.indexOf('.png') === -1 && request.body.image.indexOf('.gif') === -1)) {
-    contextData.errors.push('The image URL must end with ‘.gif’ or ‘.png’');
+    contextData.errors.push('The image URL must begin with http:// or https:// and end with ‘.gif’ or ‘.png’');
   }
   if (validator.isInt(request.body.hour) === false) {
    contextData.errors.push('Hour must be integer.');
