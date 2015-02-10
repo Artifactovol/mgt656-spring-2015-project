@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1 id='title'>{{event.title}}</h1> 
+<span id='date'>{{event.date}}</span>
+<span id='location'>{{event.location}}</span>
+<img id='image' src='{{event.image}}'/>
+
+<ul id='attendees'>
+  {% for email in event.attending %}
+    <li>
+      {{email}}
+    </li>
+  {% endfor %}
+</ul>
+</body>
+</html>
+

@@ -104,7 +104,6 @@ function saveEvent(request, response){
    contextData.errors.push('Year must be either 2015 or 2016.');
   }
   //end of new event validations
-  
   if (contextData.errors.length === 0) {
     var newEvent = {
       title: request.body.title,
