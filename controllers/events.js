@@ -103,9 +103,12 @@ function saveEvent(request, response){
   if (year > 2016 || year < 2015) {
    contextData.errors.push('Year must be either 2015 or 2016.');
   }
+
   //end of new event validations
   if (contextData.errors.length === 0) {
+    var id = events.getNewId();
     var newEvent = {
+      id: id,
       title: request.body.title,
       location: request.body.location,
       image: request.body.image,
@@ -113,7 +116,7 @@ function saveEvent(request, response){
       attending: []
     };
     events.all.push(newEvent);
-    response.redirect('/events');
+    response.redirect('/events/'+id);
   }else{
     response.render('create-event.html', contextData);
   }
@@ -132,10 +135,10 @@ function rsvp (request, response){
   if (ev === null) {
     response.status(404).send('No such event');
   }
-
-  if(validator.isEmail(request.body.email)){
+  var email = request.body.email.toLowerCase();
+  if(validator.isEmail(email) && validator.contains(email,'@yale.edu')){
     ev.attending.push(request.body.email);
-    response.redirect('/events/' + ev.id);
+    response.redirect(302,'/events/' + ev.id);
   }else{
     var contextData = {errors: [], event: ev};
     contextData.errors.push('Invalid email');
