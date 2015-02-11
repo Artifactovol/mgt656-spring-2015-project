@@ -8,9 +8,9 @@
 <Style>
   body {
     text-align: center;
-    background: url("http://dash.ga.co/assets/anna-bg.png");
+    background: url("http://3.bp.blogspot.com/-WrwNeywJx8o/TunDfXViOmI/AAAAAAAAWxg/AZ4QCeQfHVQ/s1600/bobber-custom-vecchia-scuola-lato-sinistro-borsa-cuoio.jpg");
     background-size: cover;
-    background-position: center;
+    background-position: stretch;
     color: white;
     font-family: helvetica;
     }
@@ -23,7 +23,11 @@
     background: red;
     color: white;
   }  
-
+ footer {
+      color: white;
+      display: inline;
+      padding: 0px 10px 0px 10px;
+  }
 </style>
 
 	<body class="container">
@@ -37,7 +41,13 @@
     {% endblock %}
 
     {% block footer %}
-      <footer>This be the footer.</footer>
+      <footer>
+        <p></p>
+        <p></p>
+           <a href="/events">events</a>
+           <a href="/about">about</a>
+           <a href="/events/new">new event</a>
+           <a href="/">home</a></footer>
     {% endblock %}
 
   </body>
