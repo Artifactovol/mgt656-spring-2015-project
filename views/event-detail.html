@@ -16,10 +16,16 @@
 
 </ul>
 <h1 id='title'>{{event.title}}</h1> 
-<span id='date'>{{event.date}}</span>
-<span id='location'>{{event.location}}</span>
+<p></p>
 <img id='image' src='{{event.image}}'/>
+<p></p>
+<span id='date'>{{event.date}}</span>
+<p></p>
+<span id='location'>{{event.location}}</span>
+<p></p>
 <form action='/events/RSVP/{{event.id}}' method='post'>
+<p></p>
+</li>
 <input type='email' id= 'email' name='email' placeholder='email address'/>
 <button type='submit' id='submit' name='submit'>Submit</button>
 </form>
