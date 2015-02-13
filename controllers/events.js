@@ -152,10 +152,10 @@ function api(request, response){
   
   if(search){
     for(var i = 0; i < events.all.length; i++){
-      if(events.all[i].title.indexoOf(search) !== -1){
+      if(events.all[i].title.indexOf(search) !== -1){
         output.events.push(events.all[i]);
       }
-    } 
+    }
   }else{
       output.events = events.all;
     }
