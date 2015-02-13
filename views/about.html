@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <style>
-    body {
-      text-align: center;
-      background: url("http://www.snowandsea.net/_media/img/large/salento-2.jpg");
-      background-size: cover;
-      background-position: center;
-      color: white;
-      font-family: helvetica;
-    }
-    p {
-       font-size: 22px;
-    }
-    input {
-      border: 0;
-      padding: 10px;
-      font-size: 18px;
-    }  
-    input[type="submit"] {
-      background: red;
-      color: white;
-    }
-  </style>
-</head>
-<body>
+{% extends "layout.html" %}
+
+{% block mainContent %}
 <h1>About us</h1>
 <ul>
 <p> Welcome to the Artifactovol Team presentation. XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
@@ -45,9 +21,5 @@
      </li>
     </ul> 
 </p>
- <p></p>
 <a href="/">return to home page</a>
-</body>
-</html>
-
- 
+{% endblock %}

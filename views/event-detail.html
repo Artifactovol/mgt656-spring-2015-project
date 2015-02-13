@@ -1,6 +1,8 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends "layout.html" %}
+
+{% block mainContent %}
+
+
 {% if errors %}
     <div class="form-errors">
       <p>Please correct the following errors!</p>
@@ -38,6 +40,5 @@
       <p></p>
       <a href="/events/">return to events list</a>
 </ul>
-</body>
-</html>
 
+{% endblock %}

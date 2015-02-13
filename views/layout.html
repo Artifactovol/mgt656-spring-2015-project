@@ -3,7 +3,8 @@
   <head>
     <title>{{ title }}</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+    <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' />
+</head>
 
 <Style>
   body {
@@ -33,7 +34,9 @@
 	<body class="container">
 
     {% block header %}
-      <header>Hey, I'm in the header</header>
+    <header>
+      <img src="http://image.eveonline.com/Corporation/98310656_128.png" id="logo" />
+      </header>  
     {% endblock %}
 
     {% block mainContent %}
