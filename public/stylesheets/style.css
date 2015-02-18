@@ -1,6 +1,5 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 30px Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -9,4 +8,52 @@ a {
 
 .form-errors {
 	color: red;
+}
+
+header {
+      background: white;
+      display: float;
+      height: 350px;
+      padding: 10px 10px 10px 10px;
+      background-image: url('https://ebmedia.eventbrite.com/s3-build/27171-rc2015-02-11-dbcc56c/django/images/home/banners/consumer_banner_2.jpg');
+}
+
+.container {
+        display: float;
+        margin: 10px 10px 10px 10px;
+}
+
+.main_container {
+        padding: 30px 30px 30px 30px;
+        position: relative;
+        font-size: 18px;
+}
+
+#headtext{
+    color: white;
+    font-size: large;
+    font-weight: bold;
+}
+
+header #hello{
+    color: #e0e0e0;
+    font-size: 50px;
+    font-weight: bold;
+    position: relative;
+    padding: 10px 10px 10px 10px;
+    bottom: -50px;
+}
+
+#button {
+    padding: 5px 5px 5px 5px;]
+    color: white;
+}
+
+
+
+footer {
+      background: #666;
+      height: 50px;
+          padding: 10px 10px 10px 10px;
+
 }

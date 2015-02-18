@@ -6,54 +6,31 @@
     <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css' />
 </head>
 
-<Style>
-  body {
-    text-align: center;
-    background: url("http://fc01.deviantart.net/fs70/f/2013/047/d/b/netscape_navigator__wallpaper__request__by_hardii-d5v6v0p.png");
-    background-size: cover;
-    background-position: stretch;
-    color: white;
-    font-family: helvetica;
-    }
-  input {
-    border: 0;
-    padding: 10px;
-    font-size: 18px;
-  }
-  input[type="submit"] {
-    background: red;
-    color: white;
-  }  
- footer {
-      color: white;
-      display: inline;
-      padding: 0px 10px 0px 10px;
-  }
-</style>
-
-	<body class="container">
-
+	<body>
     {% block header %}
     <header>
-      <img src="http://image.eveonline.com/Corporation/98310656_128.png" id="logo" />
-      </header>  
+      <div><a href="/"><img src="http://image.eveonline.com/Corporation/98310656_128.png" id="logo" width="50px" height="50px" />
+      <span id="headtext">Artifectovol Events</span></a></div>
+      <div id="hello">Welcome to the best event directory in New Haven.</div>
+      </header> 
     {% endblock %}
-
+    
+    <div class="main_container">
     {% block mainContent %}
       <section>Welcome to {{ title }}. {{tagline}}</section>
     {% endblock %}
-
+   </div>
+   
     {% block footer %}
       <footer>
-        <p></p>
-        <p></p>
-           <a href="/events">events</a>
-           <a href="/about">about</a>
-           <a href="/events/new">new event</a>
-           <a href="/">home</a></footer>
-           
- 
+        <span id="button"><a href="/">Home</a></span>
+        <span id="button"><a href="/events">Events</a></span>
+        <span id="button"><a href="/about">About</a></span>
+        <span id="button"><a href="/events/new">Create New Event</a></span>
+      </footer>
     {% endblock %}
+ 
+    
           <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -62,7 +39,7 @@
 
   ga('create', 'UA-59753831-1', 'auto');
   ga('send', 'pageview');
-
 </script>
-  </body>
+
+</body>
 </html>
